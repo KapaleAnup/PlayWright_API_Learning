@@ -26,7 +26,7 @@ public class GETAPICall {
 
     @Test
     public void getUserApiWithQueryParam() throws IOException {
-        apiResponse = apiRequestContext.get ( "https://gorest.co.in/public/v2/users ",
+        apiResponse = apiRequestContext.get ( "https://gorest.co.in/public/v2/users",
                 RequestOptions.create ().
                         setQueryParam ( "gender", "male" )
                         .setQueryParam ( "status","active"));

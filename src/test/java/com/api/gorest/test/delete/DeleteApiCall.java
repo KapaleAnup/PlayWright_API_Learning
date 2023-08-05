@@ -1,3 +1,5 @@
+package com.api.gorest.test.delete;
+
 import com.api.data.User;
 import com.api.data.UsersLambok;
 import com.fasterxml.jackson.databind.ObjectMapper;

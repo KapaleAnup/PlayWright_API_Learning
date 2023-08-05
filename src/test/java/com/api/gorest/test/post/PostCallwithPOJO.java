@@ -1,3 +1,5 @@
+package com.api.gorest.test.post;
+
 import com.api.data.User;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;

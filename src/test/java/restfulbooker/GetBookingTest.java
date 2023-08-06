@@ -1,13 +1,8 @@
 package restfulbooker;
 
-import com.microsoft.playwright.APIRequest;
-import com.microsoft.playwright.APIRequestContext;
 import com.microsoft.playwright.APIResponse;
-import com.microsoft.playwright.Playwright;
 import com.microsoft.playwright.options.RequestOptions;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class GetBookingTest extends BaseAPI {

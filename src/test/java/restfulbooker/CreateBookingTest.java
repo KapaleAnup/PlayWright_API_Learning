@@ -3,6 +3,7 @@ package restfulbooker;
 import com.api.data.bookingpojo.BookingData;
 import com.api.data.bookingpojo.BookingDates;
 import com.api.data.bookingpojo.BookingPayload;
+import com.api.utilities.FakerApiIntegration;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.microsoft.playwright.APIResponse;
@@ -13,14 +14,15 @@ import org.testng.annotations.Test;
 public class CreateBookingTest extends BaseAPI {
 
      static int bookingId;
+     FakerApiIntegration fakerApiIntegration;
 
     @Test(description = "Create booking details")
     public void createBookingTest() throws JsonProcessingException {
 
        BookingData bookingData =  BookingData.builder ()
-                .firstname ( "JimTet" )
-                .lastname ( "BrownTest" )
-                .totalprice ( 1112 )
+                .firstname ("User")
+                .lastname ( "Testing" )
+                .totalprice ( 100)
                 .depositpaid ( true )
                 .bookingdates ( BookingDates.builder ()
                                 .checkin ( "2018-01-01" )

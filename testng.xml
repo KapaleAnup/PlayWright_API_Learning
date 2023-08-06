@@ -6,6 +6,7 @@
             <class name="restfulbooker.GetToken" />
             <class name="restfulbooker.CreateBookingTest" />
             <class name="restfulbooker.GetBookingTest"></class>
+            <class name="restfulbooker.UpdateBookingTest"></class>
         </classes>
     </test>
 

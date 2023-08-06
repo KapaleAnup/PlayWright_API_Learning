@@ -12,7 +12,9 @@ public class BaseAPI {
     APIRequest apiRequest;
     static APIRequestContext apiRequestContext;
 
-
+    /*
+    This method will help to initialize the setup.
+     */
     @BeforeTest
     public void baseSetup(){
         playwright = Playwright.create ();

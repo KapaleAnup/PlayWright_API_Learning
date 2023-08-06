@@ -1,4 +1,4 @@
-package com.api.data;
+package com.api.data.userspojo;
 
 public class User {
 

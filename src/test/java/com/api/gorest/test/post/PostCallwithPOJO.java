@@ -1,7 +1,6 @@
 package com.api.gorest.test.post;
 
-import com.api.data.User;
-import com.fasterxml.jackson.databind.JsonNode;
+import com.api.data.userspojo.User;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.microsoft.playwright.APIRequest;
 import com.microsoft.playwright.APIRequestContext;
@@ -12,9 +11,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
 
 public class PostCallwithPOJO {
 

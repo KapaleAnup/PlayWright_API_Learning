@@ -1,7 +1,6 @@
 package com.api.gorest.test.post;
 
-import com.api.data.User;
-import com.api.data.UsersLambok;
+import com.api.data.userspojo.UsersLambok;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.microsoft.playwright.APIRequest;
 import com.microsoft.playwright.APIRequestContext;

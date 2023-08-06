@@ -1,7 +1,7 @@
 package com.api.gorest.test.put;
 
-import com.api.data.User;
-import com.api.data.UsersLambok;
+import com.api.data.userspojo.User;
+import com.api.data.userspojo.UsersLambok;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.microsoft.playwright.APIRequest;
 import com.microsoft.playwright.APIRequestContext;
@@ -46,7 +46,6 @@ public class PutCallwithPojoLambok {
                 .email ( getRandomEmail () )
                 .gender ( "male" )
                 .status ( "active" ).build ();
-
 
         //Initiate the post call with valid headers and data
         APIResponse  postApiResponse = apiRequestContext.post ( "https://gorest.co.in/public/v2/users" ,

@@ -2,6 +2,8 @@ package restfulbooker;
 
 import com.api.data.bookingpojo.BookingData;
 import com.api.data.bookingpojo.BookingDates;
+import com.api.endpoints.Endpoints;
+import com.api.utilities.ConfigProperties;
 import com.microsoft.playwright.APIResponse;
 import com.microsoft.playwright.options.RequestOptions;
 import org.testng.Assert;
@@ -25,7 +27,8 @@ public class UpdateBookingTest extends BaseAPI{
                         .build ())
                 .additionalneeds ( "Dinner" ).build ();
 
-      APIResponse updatedBookingResponse =  apiRequestContext.put ( "https://restful-booker.herokuapp.com/booking/"+CreateBookingTest.bookingId,
+      APIResponse updatedBookingResponse =
+              apiRequestContext.put ( ConfigProperties.readConfigProperties ( "url" )+ Endpoints.BOOKING+CreateBookingTest.bookingId,
                 RequestOptions.create ()
                 .setHeader ( "Content-Type","application/json" )
                 .setHeader ( "Accept"," application/json" )

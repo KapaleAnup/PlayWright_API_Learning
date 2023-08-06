@@ -1,5 +1,7 @@
 package restfulbooker;
 
+import com.api.endpoints.Endpoints;
+import com.api.utilities.ConfigProperties;
 import com.microsoft.playwright.APIResponse;
 import com.microsoft.playwright.options.RequestOptions;
 import org.testng.Assert;
@@ -9,7 +11,8 @@ public class GetBookingTest extends BaseAPI {
 
     @Test
     public void getBookingIdTest(){
-     APIResponse bookingIdResponse =  apiRequestContext.get ( "https://restful-booker.herokuapp.com/booking/"+ CreateBookingTest.bookingId
+     APIResponse bookingIdResponse =
+             apiRequestContext.get ( ConfigProperties.readConfigProperties ( "url" )+ Endpoints.BOOKING + CreateBookingTest.bookingId
         , RequestOptions.create ()
         .setHeader ( "Content-Type","application/json" ));
 

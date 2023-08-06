@@ -3,6 +3,7 @@ package restfulbooker;
 import com.api.data.bookingpojo.BookingData;
 import com.api.data.bookingpojo.BookingDates;
 import com.api.data.bookingpojo.BookingPayload;
+import com.api.utilities.ConfigProperties;
 import com.api.utilities.FakerApiIntegration;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -30,7 +31,7 @@ public class CreateBookingTest extends BaseAPI {
                         .build ())
                .additionalneeds ( "Breakfast" ).build ();
 
-        APIResponse bookingResponse = apiRequestContext.post ( "https://restful-booker.herokuapp.com/booking",
+        APIResponse bookingResponse = apiRequestContext.post ( ConfigProperties.readConfigProperties ( "url" )+"booking",
                 RequestOptions.create ()
                 .setHeader ( "Content-Type","application/json" )
                 .setData (bookingData ));

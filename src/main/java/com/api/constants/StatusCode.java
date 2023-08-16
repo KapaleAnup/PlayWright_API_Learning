@@ -1,4 +1,4 @@
-package com.api.endpoints;
+package com.api.constants;
 
 public enum StatusCode {
 

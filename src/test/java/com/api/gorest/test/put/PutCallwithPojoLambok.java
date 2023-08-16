@@ -2,7 +2,7 @@ package com.api.gorest.test.put;
 
 import com.api.data.userspojo.User;
 import com.api.data.userspojo.UsersLambok;
-import com.api.endpoints.StatusCode;
+import com.api.constants.StatusCode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.microsoft.playwright.APIRequest;
 import com.microsoft.playwright.APIRequestContext;

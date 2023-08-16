@@ -3,7 +3,7 @@ package restfulbooker;
 import com.api.data.bookingpojo.BookingData;
 import com.api.data.bookingpojo.BookingDates;
 import com.api.data.bookingpojo.BookingPayload;
-import com.api.endpoints.StatusCode;
+import com.api.constants.StatusCode;
 import com.api.utilities.ConfigProperties;
 import com.api.utilities.FakerApiIntegration;
 import com.fasterxml.jackson.core.JsonProcessingException;

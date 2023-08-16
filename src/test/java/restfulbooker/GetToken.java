@@ -1,7 +1,7 @@
 package restfulbooker;
 
 
-import com.api.endpoints.StatusCode;
+import com.api.constants.StatusCode;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.microsoft.playwright.APIRequest;
@@ -64,6 +64,7 @@ public class GetToken {
         //Capture token from the response
         TOKEN =  response.get ( "token" ).asText ();
         System.out.println ("Generated token is : "+ TOKEN );
+        System.out.println ("generateToken is successful" );
 
 
     }

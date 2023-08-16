@@ -1,6 +1,6 @@
 package com.api.gorest.test.get;
 
-import com.api.endpoints.StatusCode;
+import com.api.constants.StatusCode;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.microsoft.playwright.APIRequest;

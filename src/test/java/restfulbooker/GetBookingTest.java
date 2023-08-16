@@ -1,7 +1,7 @@
 package restfulbooker;
 
 import com.api.endpoints.Endpoints;
-import com.api.endpoints.StatusCode;
+import com.api.constants.StatusCode;
 import com.api.utilities.ConfigProperties;
 import com.microsoft.playwright.APIResponse;
 import com.microsoft.playwright.options.RequestOptions;

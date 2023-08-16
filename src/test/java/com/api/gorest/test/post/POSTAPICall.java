@@ -1,6 +1,6 @@
 package com.api.gorest.test.post;
 
-import com.api.endpoints.StatusCode;
+import com.api.constants.StatusCode;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.microsoft.playwright.APIRequest;
@@ -15,7 +15,6 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Random;
 
 public class POSTAPICall {
 

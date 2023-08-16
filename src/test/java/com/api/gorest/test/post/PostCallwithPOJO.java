@@ -1,6 +1,7 @@
 package com.api.gorest.test.post;
 
 import com.api.data.userspojo.User;
+import com.api.endpoints.StatusCode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.microsoft.playwright.APIRequest;
 import com.microsoft.playwright.APIRequestContext;
@@ -52,7 +53,7 @@ public class PostCallwithPOJO {
 
         //check the status and assert the data
         int statusCode = apiResponse.status ( );
-        Assert.assertEquals ( statusCode , 201 );
+        Assert.assertEquals ( statusCode , StatusCode.CREATED.code );
 
         System.out.println ("User Created successfully!!" );
 
@@ -76,7 +77,7 @@ public class PostCallwithPOJO {
 
         int getstatusCode = apiResponse.status ( );
         System.out.println ( "Response status code is :" + getstatusCode );
-        Assert.assertEquals ( getstatusCode , 200 );
+        Assert.assertEquals ( getstatusCode , StatusCode.SUCCESS.code );
         Assert.assertEquals (actualUser.getId (), userId  );
         Assert.assertEquals (actualUser.getName (), userData.getName ()  );
         Assert.assertNotNull ( actualUser.getId () );

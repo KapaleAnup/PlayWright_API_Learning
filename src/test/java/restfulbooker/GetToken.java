@@ -1,6 +1,7 @@
 package restfulbooker;
 
 
+import com.api.endpoints.StatusCode;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.microsoft.playwright.APIRequest;
@@ -50,7 +51,7 @@ public class GetToken {
                .setHeader ( "Content-Type", "application/json" )
                .setData ( credentials ));
 
-        Assert.assertEquals ( apiResponse.status (), 200 );
+        Assert.assertEquals ( apiResponse.status (), StatusCode.SUCCESS.code );
 
        //Convert api response to text
        String tokenResponse = apiResponse.text ();

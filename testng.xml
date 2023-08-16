@@ -1,7 +1,7 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 
 <suite name="Restful-booker apis " verbose="1" >
-    <test name="PlayWright API AUTOMATION" >
+    <test name="PlayWright API AUTOMATION RestFulBooker" >
         <classes>
             <class name="restfulbooker.GetToken" />
             <class name="restfulbooker.CreateBookingTest" />
@@ -9,6 +9,15 @@
             <class name="restfulbooker.UpdateBookingTest"></class>
         </classes>
     </test>
+
+<!--    <test name="PlayWright API AUTOMATION GO REST " >-->
+<!--        <classes>-->
+<!--            <class name="restfulbooker.GetToken" />-->
+<!--            <class name="restfulbooker.CreateBookingTest" />-->
+<!--            <class name="restfulbooker.GetBookingTest"></class>-->
+<!--            <class name="restfulbooker.UpdateBookingTest"></class>-->
+<!--        </classes>-->
+<!--    </test>-->
 
 
 </suite>

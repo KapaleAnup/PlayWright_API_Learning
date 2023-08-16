@@ -3,6 +3,7 @@ package restfulbooker;
 import com.api.data.bookingpojo.BookingData;
 import com.api.data.bookingpojo.BookingDates;
 import com.api.endpoints.Endpoints;
+import com.api.endpoints.StatusCode;
 import com.api.utilities.ConfigProperties;
 import com.microsoft.playwright.APIResponse;
 import com.microsoft.playwright.options.RequestOptions;
@@ -35,7 +36,7 @@ public class UpdateBookingTest extends BaseAPI{
                 .setHeader ( "Cookie","token="+ GetToken.TOKEN)
                 .setData ( bookingData ));
 
-        Assert.assertEquals (updatedBookingResponse.status (),200 );
+        Assert.assertEquals (updatedBookingResponse.status (), StatusCode.SUCCESS.code );
         System.out.println ("Booking data updated successfully!!" );
 
     }

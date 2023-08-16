@@ -2,6 +2,7 @@ package com.api.gorest.test.delete;
 
 import com.api.data.userspojo.User;
 import com.api.data.userspojo.UsersLambok;
+import com.api.endpoints.StatusCode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.microsoft.playwright.APIRequest;
 import com.microsoft.playwright.APIRequestContext;
@@ -58,7 +59,7 @@ public class DeleteApiCall {
 
         //check the status and assert the data
         int statusCode = postApiResponse.status ( );
-        Assert.assertEquals ( statusCode , 201 );
+        Assert.assertEquals ( statusCode , StatusCode.CREATED.code  );
 
         System.out.println ( "User Created successfully!!" );
 
@@ -87,7 +88,7 @@ public class DeleteApiCall {
 
         //check the status and assert the data
         int putApistatusCode = putApiResponse.status ( );
-        Assert.assertEquals ( putApistatusCode , 200 );
+        Assert.assertEquals ( putApistatusCode , StatusCode.SUCCESS.code  );
 
         String putResponseText = putApiResponse.text ( );
         UsersLambok actualputUser = objectMapper.readValue ( putResponseText , UsersLambok.class );
@@ -107,7 +108,7 @@ public class DeleteApiCall {
         System.out.println ( "Response status code is :" + getstatusCode );
 
         UsersLambok actuagetlUser = objectMapper.readValue ( responseText , UsersLambok.class );
-        Assert.assertEquals ( getstatusCode , 200 );
+        Assert.assertEquals ( getstatusCode , StatusCode.SUCCESS.code  );
         Assert.assertEquals ( actuagetlUser.getId ( ) , userId );
         Assert.assertEquals ( actuagetlUser.getName ( ) , userData.getName ( ) );
         Assert.assertNotNull ( actuagetlUser.getId ( ) );
@@ -122,7 +123,7 @@ public class DeleteApiCall {
 
 
         int deleteStatusCode = deleteApiResponse.status ( );
-        Assert.assertEquals ( deleteStatusCode , 204 );
+        Assert.assertEquals ( deleteStatusCode , StatusCode.NO_CONTENT.code );
 
         String deleteResponseText = deleteApiResponse.text ( );
 
@@ -136,7 +137,7 @@ public class DeleteApiCall {
 
         int getstatusCode1 = getApiResponse1.status ( );
         System.out.println ( "Response status code is :" + getstatusCode1 );
-        Assert.assertEquals ( getstatusCode1 ,  404);
+        Assert.assertEquals ( getstatusCode1 ,  StatusCode.NO_RESOURCES.code);
 
         Assert.assertTrue ( getApiResponse1.text ().contains ( "Resource not found" ) );
 

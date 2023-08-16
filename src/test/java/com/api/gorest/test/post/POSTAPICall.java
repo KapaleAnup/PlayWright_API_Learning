@@ -1,5 +1,6 @@
 package com.api.gorest.test.post;
 
+import com.api.endpoints.StatusCode;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.microsoft.playwright.APIRequest;
@@ -56,7 +57,7 @@ public class POSTAPICall {
 
         //check the status and assert the data
         int statusCode = apiResponse.status ();
-        Assert.assertEquals ( statusCode, 201 );
+        Assert.assertEquals ( statusCode, StatusCode.CREATED.code );
 
         //convert Byte response to Json object
         ObjectMapper objectMapper = new ObjectMapper (  );
@@ -76,7 +77,7 @@ public class POSTAPICall {
 
         int getstatusCode = apiResponse.status ();
         System.out.println ("Response status code is :" + getstatusCode);
-        Assert.assertEquals ( getstatusCode,200 );
+        Assert.assertEquals ( getstatusCode,StatusCode.SUCCESS.code );
         Assert.assertTrue ( apiResponse.text ().contains ( userId ) );
         Assert.assertTrue ( apiResponse.text ().contains ( "Tenali Ramakrishna" ) );
         Assert.assertTrue ( apiResponse.text ().contains ( emailid ));

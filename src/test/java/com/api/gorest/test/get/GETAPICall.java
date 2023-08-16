@@ -1,5 +1,6 @@
 package com.api.gorest.test.get;
 
+import com.api.endpoints.StatusCode;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.microsoft.playwright.APIRequest;
@@ -35,7 +36,7 @@ public class GETAPICall {
 
         int statusCode = apiResponse.status ();
         System.out.println ("Response status code is :" + statusCode);
-        Assert.assertEquals ( statusCode,200 );
+        Assert.assertEquals ( statusCode, StatusCode.SUCCESS.code );
 
         String statusText = apiResponse.statusText ();
         System.out.println ("Response status Text  is :" + statusText);
@@ -52,7 +53,7 @@ public class GETAPICall {
        apiResponse = apiRequestContext.get ( "https://gorest.co.in/public/v2/users " );
         int statusCode = apiResponse.status ();
         System.out.println ("Response status code is :" + statusCode);
-        Assert.assertEquals ( statusCode,200 );
+        Assert.assertEquals ( statusCode,StatusCode.SUCCESS.code  );
 
         String statusText = apiResponse.statusText ();
         System.out.println ("Response status Text  is :" + statusText);

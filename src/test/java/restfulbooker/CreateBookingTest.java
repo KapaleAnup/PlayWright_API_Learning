@@ -3,6 +3,7 @@ package restfulbooker;
 import com.api.data.bookingpojo.BookingData;
 import com.api.data.bookingpojo.BookingDates;
 import com.api.data.bookingpojo.BookingPayload;
+import com.api.endpoints.StatusCode;
 import com.api.utilities.ConfigProperties;
 import com.api.utilities.FakerApiIntegration;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -39,7 +40,7 @@ public class CreateBookingTest extends BaseAPI {
         String bookingDataText = bookingResponse.text ();
         System.out.println (bookingDataText);
 
-        Assert.assertEquals (bookingResponse.status (), 200);
+        Assert.assertEquals (bookingResponse.status (), StatusCode.SUCCESS.code );
 
         ObjectMapper objectMapper = new ObjectMapper (  );
         BookingPayload payload = objectMapper.readValue ( bookingDataText, BookingPayload.class );
@@ -50,7 +51,7 @@ public class CreateBookingTest extends BaseAPI {
 
         System.out.println ("Booking Data successfully created!! " );
 
-        // Fetch the response data
+        // Fetch the response data from the body
 
         bookingId = payload.getBookingid ();
         System.out.println ("Booking id is :"+bookingId );

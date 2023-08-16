@@ -2,6 +2,7 @@ package com.api.gorest.test.put;
 
 import com.api.data.userspojo.User;
 import com.api.data.userspojo.UsersLambok;
+import com.api.endpoints.StatusCode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.microsoft.playwright.APIRequest;
 import com.microsoft.playwright.APIRequestContext;
@@ -56,7 +57,7 @@ public class PutCallwithPojoLambok {
 
         //check the status and assert the data
         int statusCode = postApiResponse.status ( );
-        Assert.assertEquals ( statusCode , 201 );
+        Assert.assertEquals ( statusCode , StatusCode.CREATED.code );
 
         System.out.println ("User Created successfully!!" );
 
@@ -85,7 +86,7 @@ public class PutCallwithPojoLambok {
 
         //check the status and assert the data
         int putApistatusCode = putApiResponse.status ( );
-        Assert.assertEquals ( putApistatusCode , 200 );
+        Assert.assertEquals ( putApistatusCode , StatusCode.SUCCESS.code );
 
         String putResponseText = putApiResponse.text ();
         UsersLambok actualputUser = objectMapper.readValue ( putResponseText, UsersLambok.class );
@@ -105,7 +106,7 @@ public class PutCallwithPojoLambok {
         System.out.println ( "Response status code is :" + getstatusCode );
 
         UsersLambok actuagetlUser = objectMapper.readValue ( responseText, UsersLambok.class );
-        Assert.assertEquals ( getstatusCode , 200 );
+        Assert.assertEquals ( getstatusCode , StatusCode.SUCCESS.code );
         Assert.assertEquals (actuagetlUser.getId (), userId  );
         Assert.assertEquals (actuagetlUser.getName (), userData.getName ()  );
         Assert.assertNotNull ( actuagetlUser.getId () );

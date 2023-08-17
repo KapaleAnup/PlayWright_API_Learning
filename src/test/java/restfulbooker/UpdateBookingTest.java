@@ -29,7 +29,7 @@ public class UpdateBookingTest extends BaseAPI{
                 .additionalneeds ( "Dinner" ).build ();
 
       APIResponse updatedBookingResponse =
-              apiRequestContext.put ( ConfigProperties.readConfigProperties ( "url" )+ Endpoints.BOOKING+CreateBookingTest.bookingId,
+              apiRequestContext.put ( ConfigProperties.readConfigProperties ( "bookurl" )+ Endpoints.BOOKING+CreateBookingTest.bookingId,
                 RequestOptions.create ()
                 .setHeader ( "Content-Type","application/json" )
                 .setHeader ( "Accept"," application/json" )

@@ -13,7 +13,7 @@ public class GetBookingTest extends BaseAPI {
     @Test
     public void getBookingIdTest(){
      APIResponse bookingIdResponse =
-             apiRequestContext.get ( ConfigProperties.readConfigProperties ( "url" )+ Endpoints.BOOKING + CreateBookingTest.bookingId
+             apiRequestContext.get ( ConfigProperties.readConfigProperties ( "bookurl" )+ Endpoints.BOOKING + CreateBookingTest.bookingId
         , RequestOptions.create ()
         .setHeader ( "Content-Type","application/json" ));
 

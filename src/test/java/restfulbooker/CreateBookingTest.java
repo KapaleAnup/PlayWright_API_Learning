@@ -32,7 +32,7 @@ public class CreateBookingTest extends BaseAPI {
                         .build ())
                .additionalneeds ( "Breakfast" ).build ();
 
-        APIResponse bookingResponse = apiRequestContext.post ( ConfigProperties.readConfigProperties ( "url" )+"booking",
+        APIResponse bookingResponse = apiRequestContext.post ( ConfigProperties.readConfigProperties ( "bookurl" )+"booking",
                 RequestOptions.create ()
                 .setHeader ( "Content-Type","application/json" )
                 .setData (bookingData ));

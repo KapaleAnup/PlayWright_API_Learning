@@ -47,7 +47,8 @@ public class CreateBookingTest extends BaseAPI {
 
         Assert.assertNotNull ( payload.getBookingid () );
         Assert.assertEquals ( payload.getBookingData ().getFirstname (), bookingData.getFirstname () );
-        Assert.assertEquals ( payload.getBookingData ().getBookingdates ().getCheckin (), bookingData.getBookingdates ().getCheckin ());
+        Assert.assertEquals ( payload.getBookingData ().getBookingdates ().getCheckin (),
+                bookingData.getBookingdates ().getCheckin ());
 
         System.out.println ("Booking Data successfully created!! " );
 
